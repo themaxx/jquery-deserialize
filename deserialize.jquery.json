@@ -2,7 +2,7 @@
     "name": "deserialize",
     "title": "jQuery Deserialize",
     "description": "Convert query strings into objects. And deserialize forms easily.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "jQuery",
         "forms",
