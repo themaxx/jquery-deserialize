@@ -1,9 +1,13 @@
 (function ($) {
     $.deserialize = function (str, options) {
+    	str = (str.indexOf('?') == 0) ? str.substr(1) : str;
         var pairs = str.split(/&amp;|&/i),
             h = {},
             options = options || {};
         for(var i = 0; i < pairs.length; i++) {
+        	if( pairs[i].length == 0 ) {
+        		continue;
+        	}
             var kv = pairs[i].split('=');
             kv[0] = decodeURIComponent(kv[0]);
             if(!options.except || options.except.indexOf(kv[0]) == -1) {
@@ -25,4 +29,3 @@
         return $.deserialize($(this).serialize(), options);
     };
 })(jQuery);
-
